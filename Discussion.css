@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: black;
+}
+
+body header{
+	background-image: url(img/2.jpg);
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-top: 0.5rem solid #ec4141;
+	border-bottom: 0.5rem solid #ec4141;
+}
+
+
+/* ma navbar */ 
+
+
+nav{
+	display: flex;
+	height: 90px;
+}
+
+nav .logo{
+	color: white;
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+	font-weight: bolder;
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+nav .logo span{
+	color: #ec4141;
+	font-size: 32px;
+	margin-left: 5px;
+}
+
+nav ul{
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+}
+
+nav ul li{
+	list-style: none;
+
+}
+
+nav ul .active{
+	border-bottom: 2px solid #ec4141;
+	color: #ec4141;
+
+}
+
+nav ul a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 14px;
+	padding: 1rem 1.2rem;
+	margin: 0 0.3rem;
+	color: white;
+}
+
+nav ul a:hover{
+	border-bottom: 2px solid #ec4141;
+	color: #ec4141;
+
+}
+
+/* PARTIE DISCUSSION */ 
+
+.discussion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    /* Autres styles nécessaires */
+}
+
+.chat-box {
+    width: 80%;
+    height: 60vh;
+    overflow-y: auto; /* Barre de défilement si nécessaire */
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* Autres styles de la zone de discussion */
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    /* Styles généraux des messages */
+    display: flex;
+    align-items: center;
+    /* Ajout d'animations pour les messages */
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.incoming {
+    background-color: #f2f2f2;
+    animation-name: slideInLeft; /* Animation pour les messages reçus */
+
+    /* Styles pour les messages reçus */
+}
+
+.outgoing {
+    background-color: #d4edda;
+    align-self: flex-end; /* Alignement à droite pour les messages envoyés */
+    /* Styles pour les messages envoyés */
+    animation-name: slideInRight; /* Animation pour les messages envoyés */
+
+}
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.message-input {
+    width: 80%;
+    margin-top: 20px;
+    /* Styles de la zone de saisie de message */
+}
+
+input[type="text"] {
+    width: calc(100% - 70px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    /* Autres styles de l'input */
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    /* Autres styles du bouton */
+}
+
+/* ... Vos styles précédents ... */
+
+.reactions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    /* Ajoutez des styles pour les boutons de réaction */
+}
+
+.reaction-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.reaction-btn:hover {
+    transform: scale(1.2); /* Animation de zoom au survol */
+}
+
+/* Section partage défi */ 
+
+.defi {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.defi h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.defi-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.defi-details input[type="text"] {
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+.defi-details button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4285f4;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.defi-details button:hover {
+    background-color: #3367d6; /* Changement de couleur au survol */
+}
+
+.footer {
+    background: url(image/footer-bg.jpg) no-repeat; 
+    background-size: cover;
+    background-position: center;
+	margin-left: 20%; /* Ajuste cette valeur selon ton besoin */
+	margin-top: 50px; /* Augmente cette valeur pour faire descendre le footer */
+
+
+}
+
+.footer .box-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 1.5rem; 
+}
+
+.footer .box-container .box h3 {
+    color: whitesmoke; 
+    font-size: 1.5rem; 
+    display: block; 
+}
+
+.footer .box-container .box a {
+    color: whitesmoke; 
+    font-size: 1.5rem; 
+    display: block;
+
+}
+
+.footer .box-container .box a i{
+    color: whitesmoke; 
+    padding-right: .5rem;
+    transition: .2s linear; 
+}
+
+
+.footer .box-container .box a:hover i {
+   padding-right: 2rem; 
+}
+
+.footer .home-right {
+    text-align: center; 
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: .1rem solid v;
+    font-size: 2rem;
+    color: whitesmoke; 
+}
+
+.footer .home-right span {
+    color: whitesmoke; 
+}
